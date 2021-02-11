@@ -123,6 +123,8 @@ stages:
       displayName: 'Use .NET Core SDK $(dotnetSdkVersion)'
       inputs:
         version: '$(dotnetSdkVersion)'
+    - script: choco install Selenium.WebDriver --version=4.0.0-alpha07
+      displayName: 'intstall Selenium.WebDriver'
     - task: DotNetCoreCLI@2
       displayName: 'Build the project - $(buildConfiguration)'
       inputs:
