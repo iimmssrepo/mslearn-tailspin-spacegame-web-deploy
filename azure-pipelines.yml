@@ -123,16 +123,10 @@ stages:
       displayName: 'Use .NET Core SDK $(dotnetSdkVersion)'
       inputs:
         version: '$(dotnetSdkVersion)'
-    - task: DotNetCoreCLI@2
+    - script: 'dotnet add package Selenium.WebDriver.ChromeDriver --version 89.0.4389.2300-beta'
       displayName: 'intstall Selenium.WebDriver'
-      inputs:
-        command: 'custom'
-        custom: dotnet add package Selenium.WebDriver.ChromeDriver --version 89.0.4389.2300-beta 
-    - task: DotNetCoreCLI@2
+    - script: 'dotnet add package Selenium.Support --version 4.0.0-alpha07'
       displayName: 'intstall Selenium.Support'
-      inputs:
-        command: 'custom'
-        custom: dotnet add package Selenium.Support --version 4.0.0-alpha07 
     - task: DotNetCoreCLI@2
       displayName: 'Build the project - $(buildConfiguration)'
       inputs:
