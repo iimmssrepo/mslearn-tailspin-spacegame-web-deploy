@@ -143,5 +143,5 @@ stages:
               resourceGroupName: 'tailspin-space-game-rg'
               webAppName: '$(WebAppNameStaging)'
               sourceSlot: 'swap'
-              swapWithProduction: 'true'
-              action: 'slot swap'
+              targetSlot: 'production'
+              action: 'Swap Slots'
